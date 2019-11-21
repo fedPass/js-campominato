@@ -17,7 +17,6 @@ function generaRandom(min, max) {
     var random = Math.floor(Math.random() * (max - min + 1) ) + min;
     return random;
 }
-
 // B. chiedere all’utente di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // chiedi un numero finchè numeroUtente non è incluso in mine
 var numeroTentativi = 0;
