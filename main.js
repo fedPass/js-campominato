@@ -21,18 +21,26 @@ function generaRandom(min, max) {
 }
 
 // B. chiedere all’utente di inserire un numero alla volta, sempre compreso tra 1 e 100.
+// do {
+//     var numeroUtente = parseInt(prompt('Inserisci un numero tra 1 e 100'));
+// }
 var numeroUtente = parseInt(prompt('Inserisci un numero tra 1 e 100'));
-if ((numeroUtente <= 1) && (numeroUtente >= 100)) {
-    console.log('hai inserito ' + numeroUtente);
-} else {
+if ((numeroUtente > 1) && (numeroUtente > 100)) {
     console.log('non hai inserito un numero valido');
+} else {
+    console.log('hai inserito ' + numeroUtente);
+    for (var i = 0; i < mine.length; i++) {
+        // C. Se il numero è presente nella lista dei numeri generati, la partita termina (l'utente ha beccato una mina)
+        if (numeroUtente == mine[i]) {
+            console.log('Boom! Hai preso una mina');
+        // } else {
+        // // altrimenti si continua chiedendo all’utente un altro numero.
+        // //come faccio ripartire?
+        //     console.log('Inserisci un altro numero');
+        }
+    }
 }
 
-
-// C. Se il numero è presente nella lista dei numeri generati, la partita termina (l'utente ha beccato una mina)
-// altrimenti si continua chiedendo all’utente un altro numero.
-// 1) Se pesto la mina GAME OVER(se il numero è nell’array sei al CREATORE )
-// 2)Altrimenti ripetiamo la richiesta di inserire un numero
 
 // La partita termina quando il giocatore inserisce un numero “mina” o raggiunge il numero massimo possibile di numeri consentiti
 
