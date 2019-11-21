@@ -20,35 +20,37 @@ function generaRandom(min, max) {
 
 // B. chiedere all’utente di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // chiedi un numero finchè numeroUtente non è incluso in mine
+var numeroTentativi = 0;
 do {
     var numeroUtente = parseInt(prompt('Inserisci un numero tra 1 e 100'));
+    console.log('Hai inserito il numero ' + numeroUtente);
     if ((numeroUtente > 1) && (numeroUtente > 100)) {
         console.log('non hai inserito un numero valido');
     }
-} while (!mine.includes(numeroUtente));
+    numeroTentativi++;
+} while ((!mine.includes(numeroUtente) && (numeroTentativi < 84)));
 // La partita termina quando il giocatore inserisce un numero “mina” o raggiunge il numero massimo possibile di numeri consentiti
 // inserisce un numero “mina” --> !mine.includes(numeroUtente)
-// raggiunge il numero massimo --> MI MANCA UNA CONDIZIONE PER DIRE RIPETI AL MAX 84 VOLTE
+// raggiunge il numero massimo --> (numeroTentativi < 84)
 console.log('Boom! Hai preso una mina');
-
 //C. Al termine della partita il software deve comunicare il numero di volte che l’utente ha inserito un numero consentito.
-
+console.log('Hai perso dopo ' + numeroTentativi + ' tentativi');
 
 // Prova precedente
-var numeroUtente = parseInt(prompt('Inserisci un numero tra 1 e 100'));
-if ((numeroUtente > 1) && (numeroUtente > 100)) {
-    console.log('non hai inserito un numero valido');
-} else {
-    console.log('hai inserito ' + numeroUtente);
-    for (var i = 0; i < mine.length; i++) {
-        // C. Se il numero è presente nella lista dei numeri generati, la partita termina (l'utente ha beccato una mina)
-        if (numeroUtente == mine[i]) {
-            console.log('Boom! Hai preso una mina');
-        } else {
-        // altrimenti si continua chiedendo all’utente un altro numero.
-        //come faccio ripartire?
-        //mi serve una funzione forse ???
-            console.log('Inserisci un altro numero');
-        }
-    }
-}
+// var numeroUtente = parseInt(prompt('Inserisci un numero tra 1 e 100'));
+// if ((numeroUtente > 1) && (numeroUtente > 100)) {
+//     console.log('non hai inserito un numero valido');
+// } else {
+//     console.log('hai inserito ' + numeroUtente);
+//     for (var i = 0; i < mine.length; i++) {
+//         // C. Se il numero è presente nella lista dei numeri generati, la partita termina (l'utente ha beccato una mina)
+//         if (numeroUtente == mine[i]) {
+//             console.log('Boom! Hai preso una mina');
+//         } else {
+//         // altrimenti si continua chiedendo all’utente un altro numero.
+//         //come faccio ripartire?
+//         //mi serve una funzione forse ???
+//             console.log('Inserisci un altro numero');
+//         }
+//     }
+// }
