@@ -81,8 +81,9 @@ function generaRandom(min, max) {
 }
 
 //funzione che controlla che il numeroUtente è valido (è numero, compreso tra 1 e 100, non inserito precedentemente)
+//dovevo usare || perchè basta che una di queste sia vera per restituirmi true
 function numeroNonValido(numeroUtente, numeriInseriti) {
-    if (isNaN(numeroUtente) && (numeroUtente < 1) && (numeroUtente > 100) && numeriInseriti.includes(numeroUtente)) {
+    if (isNaN(numeroUtente) || (numeroUtente < 1) || (numeroUtente > 100) || numeriInseriti.includes(numeroUtente)) {
         return true;
     } else {
         return false;
